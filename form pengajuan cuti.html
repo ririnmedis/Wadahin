@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pengajuan Cuti Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .form-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .checkbox-label {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulir Pengajuan Cuti Pegawai</h1>
+    <h2>Harap mengisi formulir berikut untuk pengajuan cuti</h2>
+
+    <form action="#" method="POST">
+        <!-- Data Pribadi Pegawai -->
+        <div class="form-section">
+            <h3>1. Data Pribadi Pegawai</h3>
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="nip">NIP (Nomor Induk Pegawai):</label>
+            <input type="text" id="nip" name="nip" required>
+
+            <label for="jabatan">Jabatan:</label>
+            <input type="text" id="jabatan" name="jabatan" required>
+
+            <label for="unit_kerja">Unit Kerja:</label>
+            <input type="text" id="unit_kerja" name="unit_kerja" required>
+
+            <label for="departemen">Departemen:</label>
+            <input type="text" id="departemen" name="departemen" required>
+        </div>
+
+        <!-- Jenis Cuti -->
+        <div class="form-section">
+            <h3>2. Jenis Cuti</h3>
+            <label>Pilih jenis cuti yang akan diajukan:</label><br>
+            <input type="radio" id="cuti_tahunan" name="jenis_cuti" value="Cuti Tahunan" required>
+            <label for="cuti_tahunan" class="checkbox-label">Cuti Tahunan</label><br>
+
+            <input type="radio" id="cuti_sakit" name="jenis_cuti" value="Cuti Sakit">
+            <label for="cuti_sakit" class="checkbox-label">Cuti Sakit</label><br>
+
+            <input type="radio" id="cuti_besar" name="jenis_cuti" value="Cuti Besar">
+            <label for="cuti_besar" class="checkbox-label">Cuti Besar</label><br>
+
+            <input type="radio" id="cuti_melahirkan" name="jenis_cuti" value="Cuti Melahirkan">
+            <label for="cuti_melahirkan" class="checkbox-label">Cuti Melahirkan</label><br>
+
+            <input type="radio" id="cuti_alasan_penting" name="jenis_cuti" value="Cuti Alasan Penting">
+            <label for="cuti_alasan_penting" class="checkbox-label">Cuti Alasan Penting</label><br>
+
+            <input type="radio" id="cuti_lainnya" name="jenis_cuti" value="Cuti Lainnya">
+            <label for="cuti_lainnya" class="checkbox-label">Cuti Lainnya</label>
+            <input type="text" id="cuti_lainnya_text" name="cuti_lainnya_text">
+        </div>
+
+        <!-- Tanggal Pengajuan Cuti -->
+        <div class="form-section">
+            <h3>3. Tanggal Pengajuan Cuti</h3>
+            <label for="tanggal_mulai">Tanggal Mulai Cuti:</label>
+            <input type="date" id="tanggal_mulai" name="tanggal_mulai" required>
+
+            <label for="tanggal_selesai">Tanggal Selesai Cuti:</label>
+            <input type="date" id="tanggal_selesai" name="tanggal_selesai" required>
+
+            <label for="jumlah_hari">Jumlah Hari Cuti:</label>
+            <input type="text" id="jumlah_hari" name="jumlah_hari" required>
+        </div>
+
+        <!-- Alasan Pengajuan Cuti -->
+        <div class="form-section">
+            <h3>4. Alasan Pengajuan Cuti</h3>
+            <textarea id="alasan" name="alasan"></textarea>
+        </div>
+
+        <!-- Lampiran Dokumen Pendukung -->
+        <div class="form-section">
+            <h3>5. Lampiran Dokumen Pendukung</h3>
+            <label for="lampiran">Dokumen yang dilampirkan:</label><br>
+            <input type="checkbox" id="lampiran_surat_dokter" name="lampiran_surat_dokter">
+            <label for="lampiran_surat_dokter" class="checkbox-label">Surat Dokter (untuk cuti sakit)</label><br>
+
+            <input type="checkbox" id="lampiran_surat_melahirkan" name="lampiran_surat_melahirkan">
+            <label for="lampiran_surat_melahirkan" class="checkbox-label">Surat Keterangan Melahirkan (untuk cuti melahirkan)</label><br>
+
+            <input type="checkbox" id="lampiran_surat_instan" name="lampiran_surat_instan">
+            <label for="lampiran_surat_instan" class="checkbox-label">Surat Keterangan dari Instansi Lain (untuk cuti alasan penting)</label><br>
+
+            <input type="checkbox" id="lampiran_dokumen_lainnya" name="lampiran_dokumen_lainnya">
+            <label for="lampiran_dokumen_lainnya" class="checkbox-label">Dokumen lainnya:</label>
+        </div>
+
+        <!-- Persetujuan Atasan -->
+        <div class="form-section">
+            <h3>6. Persetujuan Atasan</h3>
+            <label for="nama_atasan">Nama Atasan Langsung:</label>
+            <input type="text" id="nama_atasan" name="nama_atasan">
+
+            <label for="jabatan_atasan">Jabatan Atasan:</label>
+            <input type="text" id="jabatan_atasan" name="jabatan_atasan">
+
+            <label for="tanggal_persetujuan">Tanggal Persetujuan:</label>
+            <input type="date" id="tanggal_persetujuan" name="tanggal_persetujuan">
+
+            <label for="tanda_tangan">Tanda Tangan/Cap Atasan:</label>
+            <input type="text" id="tanda_tangan" name="tanda_tangan">
+        </div>
+
+        <!-- Catatan Tambahan -->
+        <div class="form-section">
+            <h3>7. Catatan Tambahan</h3>
+            <textarea id="catatan_tambahan" name="catatan_tambahan"></textarea>
+        </div>
+
+        <button type="submit" class="button">Kirim Pengajuan Cuti</button>
+    </form>
+
+</body>
+</html>

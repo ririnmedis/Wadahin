@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pegawai yang Sedang Cuti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Daftar Pegawai yang Sedang Cuti</h1>
+
+    <p><a href="Form Pengajuan Cuti.html" class="button">Ajukan Cuti Baru</a></p>
+
+    <!-- Tabel Daftar Pegawai Cuti -->
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Pegawai</th>
+                <th>NIP</th>
+                <th>Jabatan</th>
+                <th>Jenis Cuti</th>
+                <th>Tanggal Mulai</th>
+                <th>Tanggal Selesai</th>
+                <th>Alasan</th>
+                <th>Status Persetujuan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Baris 1 -->
+            <tr>
+                <td>1</td>
+                <td>Agus Santoso</td>
+                <td>123456789</td>
+                <td>Manajer Keuangan</td>
+                <td>Cuti Tahunan</td>
+                <td>2025-05-01</td>
+                <td>2025-05-07</td>
+                <td>Cuti tahunan untuk liburan keluarga</td>
+                <td>Disetujui</td>
+            </tr>
+            <!-- Baris 2 -->
+            <tr>
+                <td>2</td>
+                <td>Maria Putri</td>
+                <td>987654321</td>
+                <td>Staf HRD</td>
+                <td>Cuti Sakit</td>
+                <td>2025-04-28</td>
+                <td>2025-05-02</td>
+                <td>Sakit demam tinggi</td>
+                <td>Disetujui</td>
+            </tr>
+            <!-- Baris 3 -->
+            <tr>
+                <td>3</td>
+                <td>Hendra Pratama</td>
+                <td>112233445</td>
+                <td>Staff IT</td>
+                <td>Cuti Melahirkan</td>
+                <td>2025-05-05</td>
+                <td>2025-05-20</td>
+                <td>Melahirkan anak pertama</td>
+                <td>Menunggu Persetujuan</td>
+            </tr>
+            <!-- Baris 4 -->
+            <tr>
+                <td>4</td>
+                <td>Rina Sari</td>
+                <td>223344556</td>
+                <td>Staff Pemasaran</td>
+                <td>Cuti Alasan Penting</td>
+                <td>2025-04-30</td>
+                <td>2025-05-05</td>
+                <td>Urgensi keluarga</td>
+                <td>Menunggu Persetujuan</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

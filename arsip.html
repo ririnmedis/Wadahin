@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arsip - BPS Kota Bekasi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #eef9ff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background-color: white;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: #000;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 36px;
+      color: #222;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 0 40px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      height: 48px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      color: #007bff;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer .social-icons img {
+      width: 20px;
+      margin: 0 5px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="navbar-brand fw-bold" href="home.html">
+      <img src="assets/img/BPS.png" alt="Logo" width="30" class="me-2">
+      BPS Kabupaten Bekasi
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="inovasi.html">Inovasi</a>
+      <a href="kepegawaian.html">Kepegawaian</a>
+      <a href="#">RB dan Kinerja</a>
+      <a href="arsip.html">Arsip</a>
+      <a href="#">Lainnya</a>
+    </nav>
+  </header>
+
+  <h1>ARSIP</h1>
+
+  <section class="grid">
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/48/briefcase.png" alt="Rapat Dinas">
+      <h3>Rapat Dinas</h3>
+      <p>Keperluan Rapat</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/50/vertical-line.png" alt="MARI">
+      <h3>MARI</h3>
+      <p>Manajemen Risiko</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/48/compass.png" alt="Respon Rate">
+      <h3>Respon Rate</h3>
+      <p>Responden Survei</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/48/folder-invoices.png" alt="SK Tim">
+      <h3>SK Tim</h3>
+      <p>Surat Keputusan</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/48/contract.png" alt="SPK Mitra">
+      <h3>SPK Mitra</h3>
+      <p>Surat Perjanjian Kerja</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/48/camera.png" alt="Dokumentasi">
+      <h3>Dokumentasi</h3>
+      <p>Dokumentasi Kegiatan</p>
+    </div>
+  </section>
+
+  <footer>
+    Hak Cipta © 2024 Badan Pusat Statistik Kota Bekasi <br/>
+    <div class="social-icons">
+      <img src="https://img.icons8.com/fluency/24/facebook-new.png" alt="Facebook">
+      <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram">
+      <img src="https://img.icons8.com/fluency/24/youtube-play.png" alt="YouTube">
+    </div>
+  </footer>
+
+</body>
+</html>
