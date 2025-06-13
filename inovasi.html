@@ -1,149 +1,617 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Inovasi - BPS Kabupaten Bekasi</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Tentang Kami - BPS Kabupaten Bekasi</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link href="assets/img/BPS.png" rel="icon" />
+  <link href="assets/img/BPS.png" rel="apple-touch-icon" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+
   <style>
-    .icon-circle {
-      font-size: 2rem;
-      color: #0d6efd;
-      background-color: #e7f1ff;
-      border-radius: 50%;
-      padding: 12px;
-      width: 60px;
-      height: 60px;
+    body {
+      background-image: url("BPSGedung.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .overlay-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(33, 150, 243, 0.08);
+      z-index: 0;
+      pointer-events: none;
+    }
+    header.header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+      padding: 0.7rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
+      justify-content: space-between;
+      overflow-x: auto;
     }
-
-    .innovation-card {
-      transition: transform 0.2s ease;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      padding-left: 12px;
     }
-
-    .innovation-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    .header-left img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      margin-right: 8px;
     }
-
-    nav {
-      background-color: #f8f9fa;
-      padding: 10px 20px;
-      text-align: center;
-      margin-bottom: 30px;
+    .header-left span {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #010202;
+      font-family: 'Poppins',sans-serif;
+      letter-spacing: 0.25px;
     }
-
-    nav a {
-      margin: 0 15px;
+    #navmenu.navmenu {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      padding-left: 12px;
+    }
+    #navmenu.navmenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      background: none;
+      overflow-x: auto;
+    }
+    #navmenu.navmenu ul li {
+      position: relative;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+    #navmenu.navmenu ul li:last-child {
+      margin-right: 0;
+    }
+    #navmenu.navmenu ul li a {
       text-decoration: none;
-      color: #020305;
-      font-weight: 500;
+      color: #222;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
+    #navmenu.navmenu ul li a.active,
+    #navmenu.navmenu ul li a:hover {
+      color: #2196f3;
+    }
+    #navmenu.navmenu ul li.dropdown > a {
+      cursor: pointer;
+    }
+    #navmenu.navmenu ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: none;
+      padding: 0.5rem 0;
+      z-index: 999;
+      border-radius: 4px;
+    }
+    #navmenu.navmenu ul li:hover > ul {
+      display: block;
+    }
+    #navmenu.navmenu ul li ul li {
+      margin: 0;
+    }
+    #navmenu.navmenu ul li ul li a {
+      padding: 0.5rem 1rem;
+      color: #222;
+      white-space: nowrap;
+      text-transform: none;
+    }
+    #navmenu.navmenu ul li ul li a:hover {
+      background-color: #e7f1ff;
+      color: #2196f3;
+    }
+    #navmenu.navmenu ul li ul li.dropdown > a::after {
+      content: "\f105";
+      font-family: "Bootstrap Icons";
+      font-weight: bold;
+      margin-left: auto;
+      font-style: normal;
+    }
+    #navmenu.navmenu ul li ul li ul {
+      top: 0;
+      left: 100%;
+    }
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+    @media (max-width: 991px) {
+      header.header {
+        flex-wrap: wrap;
+      }
+      #navmenu.navmenu ul {
+        flex-direction: column;
+        display: none;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-radius: 0 0 12px 12px;
+        z-index: 100;
+        width: 100vw;
+        min-width: 0;
+      }
+      #navmenu.navmenu ul.active {
+        display: flex;
+      }
+      #navmenu.navmenu ul li {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+      #navmenu.navmenu ul li ul {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+      }
+      .mobile-nav-toggle {
+        display: block;
+      }
+    }
+    .container {
+      background-color: rgba(255,255,255,0.92);
+      padding: 40px 30px 30px 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 24px rgba(33,150,243,0.10);
+      margin-top: 40px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-title h2 {
+      font-weight: 700;
+      color: #2196f3;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .section-title p {
+      color: #444;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    .accordion-item {
+      border-radius: 12px !important;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.06);
+    }
+    .accordion-button {
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: #2196f3;
+      background: #f7fbff;
+      border: none;
+      outline: none;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .accordion-button:not(.collapsed) {
+      color: #fff;
+      background: linear-gradient(90deg, #2196f3 70%, #21cbf3 100%);
+      box-shadow: none;
+    }
+    .accordion-body {
+      background: rgba(255,255,255,0.98);
+      font-size: 1.04rem;
+      color: #333;
+    }
+    .accordion-button::after {
+      color: #2196f3;
+    }
+    .accordion-button:not(.collapsed)::after {
+      color: #fff;
+    }
+    .about-icon {
+      font-size: 2.2rem;
+      color: #2196f3;
+      margin-right: 0.7rem;
+      vertical-align: middle;
+    }
+    @media (max-width: 767px) {
+      .container {
+        padding: 18px 6px 16px 6px;
+      }
+      .section-title h2 {
+        font-size: 1.3rem;
+      }
+      .header-left span {
+        font-size: 1rem;
+      }
+      .header-left img {
+        height: 32px;
+      }
+      header.header {
+        padding: 0.5rem 0.2rem;
+      }
+    }
+    /* Card & Section Styles */
+  .icon-circle {
+    font-size: 2rem;
+    color: #0d6efd;
+    background-color: #e7f1ff;
+    border-radius: 50%;
+    padding: 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .innovation-card {
+    transition: transform 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  .innovation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  .container {
+    background-color: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #2196f3;
+    letter-spacing: 1px;
+    font-size: 2.1rem;
+  }
+  @media (max-width: 991px) {
+    .container {
+      padding: 16px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 24px 0 12px;
+    }
+  }
+  @media (max-width: 767px) {
+    .container {
+      padding: 10px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 24px 0 12px;
+    }
+    /* Nested dropdown support */
+#navmenu.navmenu ul li.dropdown:hover > ul {
+  display: block;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-  </style>
-  <link href="assets/img/BPS.png" rel="apple-touch-icon">
-  <link href="assets/css/main.css" rel="stylesheet">
+#navmenu.navmenu ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 999;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+}
+
+#navmenu.navmenu ul li ul li.dropdown:hover > ul {
+  display: block;
+  left: 100%;
+  top: 0;
+}
+
+#navmenu.navmenu ul li ul li ul {
+  left: 100%;
+  top: 0;
+  position: absolute;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+}
+  }
+</style>
+
 </head>
 <body>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="inovasi.html">Inovasi</a>
-  <a href="kepegawaian.html">Kepegawaian</a>
-  <a href="#">RB dan Kinerja</a>
-  <a href="arsip.html">Arsip</a>
-  <a href="#">Lainnya</a>
-</nav>
-
-<div class="container my-5">
-  <h2 class="text-center fw-bold mb-4">Inovasi BPS Kabupaten Bekasi</h2>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-
-    <!-- BATIK -->
-    <a href="batik.html" class="text-decoration-none text-dark">
-      <div class="card text-center p-3 innovation-card h-100">
-        <div class="icon-circle"><i class="bi bi-shield-lock-fill"></i></div>
-        <div class="card-body">
-          <h5 class="card-title text-primary fw-bold">BATIK</h5>
-          <p class="card-text">Bekasi Anti-Gratifikasi</p>
-        </div>
-      </div>
-    </a>
-
-    <!-- DRAKOR -->
-    <div class="col">
-      <a href="drakor.html" class="text-decoration-none text-dark">
-        <div class="card text-center p-3 innovation-card h-100">
-          <div class="icon-circle"><i class="bi bi-box-arrow-right"></i></div>
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">DRAKOR</h5>
-            <p class="card-text">Daftar Keluar Kantor</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- KOPASUS -->
-    <div class="col">
-      <a href="kopasus.html" class="text-decoration-none text-dark">
-        <div class="card text-center p-3 innovation-card h-100">
-          <div class="icon-circle"><i class="bi bi-star-fill"></i></div>
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">KOPASUS</h5>
-            <p class="card-text">Kotak Kepuasan Khusus</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- MARI -->
-    <div class="col">
-      <a href="kopasus.html" class="text-decoration-none text-dark">
-        <div class="card text-center p-3 innovation-card h-100">
-          <div class="icon-circle"><i class="bi bi-exclamation-triangle-fill"></i></div>
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">KOPASUS</h5>
-            <p class="card-text">Kotak Kepuasan Khusus</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Monday Booster -->
-    <div class="col">
-      <a href="kopasus.html" class="text-decoration-none text-dark">
-        <div class="card text-center p-3 innovation-card h-100">
-          <div class="icon-circle"><i class="bi bi-calendar-week-fill"></i></div>
-          <div class="card-body">
-            <h5 class="card-title text-primary fw-bold">KOPASUS</h5>
-            <p class="card-text">Kotak Kepuasan Khusus</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- PESTA -->
-    <div class="col">
-      <div class="card text-center p-3 innovation-card">
-        <div class="icon-circle"><i class="bi bi-journal-text"></i></div>
-        <div class="card-body">
-          <h5 class="card-title text-primary fw-bold">PESTA</h5>
-          <p class="card-text">Pembinaan Statistik Sektoral</p>
-        </div>
-      </div>
-    </div>
-
+  <div class="overlay-bg"></div>
+  <!-- Header dengan logo & navmenu -->
+  <header class="header" style="padding-left: 60px;">
+  <div class="header-left">
+    <img src="assets/img/BPS.png" alt="Logo BPS" />
+    <span>WADAH-IN</span>
   </div>
-</div>
+  <nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a class="nav-link scrollto" href="index.html">Beranda</a></li>
+    <li><a class="nav-link scrollto" href="about.html">Tentang Kami</a></li>
+    <li><a class="nav-link scrollto inovasi" href="inovasi.html">Inovasi</a></li>
+    <li><a class="nav-link scrollto" href="Kepegawaian.html">Kepegawaian</a></li>
+    <li><a class="nav-link scrollto" href="arsip.html">Arsip</a></li>
+    
+          <li class="dropdown">
+  <a href="#"><span>RB dan Kinerja</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+  <ul>
+    <li><a href="#">RB 2024</a></li>
+    <li class="dropdown">
+      <a href="#"><span>RB 2025</span> <i class="bi bi-chevron-right toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="#">Laporan Kinerja</a></li>
+        <li><a href="#">Dokumen RB</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+</header>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Konten utama -->
+  <div class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Inovasi BPS Kabupaten Bekasi</h2>
+    <div class="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-4">
+      <!-- BATIK -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1WaF7_Gbsky0AeUoWy9hzvbUeSU8fpDAT?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-shield-lock-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">BATIK</h5>
+              <p class="card-text mb-0" style="color:#666;">Bekasi Anti-Gratifikasi</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- DRAKOR -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1xsBWeit_Uf91R3SXWlAaSw_aAPayTQrD?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-box-arrow-right"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">DRAKOR</h5>
+              <p class="card-text mb-0" style="color:#666;">Daftar Keluar Kantor</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- KOPASUS -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1KlaQj6xilxFd6tlz22Jie6lu0lnihpPd?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-star-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">KOPASUS</h5>
+              <p class="card-text mb-0" style="color:#666;">Kotak Kepuasan Khusus</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- MARI -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1gTylpoImeVhR95U7CqCDgF15EzsL-gij?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-exclamation-triangle-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">MARI</h5>
+              <p class="card-text mb-0" style="color:#666;">Manajemen Risiko</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Monday Booster -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1vROgMMi8UFg3yUQJEJDh8-_iy31bhbhv?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-calendar-week-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">Monday Booster</h5>
+              <p class="card-text mb-0" style="color:#666;">Doa Bersama dan Ice breaking Setiap Senin</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- PESTA -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1ivpOJya1_wh9IKjZKD40Z_-9rOaiK8YD?usp=drive_link"target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-journal-text"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">PESTA</h5>
+              <p class="card-text mb-0" style="color:#666;">Pembinaan Statistik Sektoral</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- PETANG -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1rH_jcbNayOuof5OEOvtctvUM7OaxZt1B?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-geo-alt-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">PETANG</h5>
+              <p class="card-text mb-0" style="color:#666;">Perubahan Tata Ruang</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- RAMEN -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1prFn4t17eUaDeqz1J3W3ZDs73qtf7bmf?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-people-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">RAMEN</h5>
+              <p class="card-text mb-0" style="color:#666;">Rapat Mingguan setiap Senen</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- SERASI -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1zLMvG0khzwEgzgdyoqx722T1Y59Uxt9E?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-bar-chart-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">SERASI</h5>
+              <p class="card-text mb-0" style="color:#666;">Akselerasi Diseminasi Statistik Kota Bekasi</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- SIRATU -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1rYk7W6Oesf9eMHD5-PnmET6fYbNB2fVd?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-envelope-paper-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">SIRATU</h5>
+              <p class="card-text mb-0" style="color:#666;">Sistem Surat Satu Pintu</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- SIRENJA -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1upO0ESjb-f_X0C4D8vURbbbI0JtDBrr3?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-journal-check"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">SIRENJA</h5>
+              <p class="card-text mb-0" style="color:#666;">Sistem Rencana Kerja</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- WISE -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1hsGQHfMJbkyWqujB2ePtpBl-BlnlfpY7?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-megaphone-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">WISE</h5>
+              <p class="card-text mb-0" style="color:#666;">Whistle Blowing System</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- SILAPOR -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1U9pw1S60EU_4cqumflV39XqWTZL4JrdO?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-clipboard-data-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">SILAPOR</h5>
+              <p class="card-text mb-0" style="color:#666;">Kompilasi Laporan Kegiatan Tim</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- SIKAP -->
+      <div class="col">
+        <a href="https://drive.google.com/drive/folders/1_G-aDSMDRcQ3-Nwa5LXr-JCC02XlHDJc?usp=drive_link" target="_blank" class="text-decoration-none">
+          <div class="card text-center p-4 h-100 innovation-card">
+            <div class="icon-circle mb-3"><i class="bi bi-award-fill"></i></div>
+            <div class="card-body p-0">
+              <h5 class="card-title fw-bold mb-1" style="color:#2196f3;">SIKAP</h5>
+              <p class="card-text mb-0" style="color:#666;">Kompilasi Penilaian Kinerja Pegawai</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Mobile nav toggle behavior
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('#navmenu ul');
+  if (mobileNavToggle && navMenu) {
+    mobileNavToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
+
+  // Dropdown toggle behavior (for mobile)
+  document.querySelectorAll('#navmenu .toggle-dropdown').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      // Only activate on mobile
+      if (window.innerWidth <= 991) {
+        e.preventDefault();
+        const parentLi = this.closest('li');
+        if (parentLi) {
+          parentLi.classList.toggle('open');
+          const submenu = parentLi.querySelector('ul');
+          if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+          }
+        }
+      }
+    });
+  });
+
+  // Optional: Hide submenus when resizing from mobile to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 991) {
+      document.querySelectorAll('#navmenu .dropdown ul').forEach(ul => {
+        ul.style.display = '';
+      });
+      document.querySelectorAll('#navmenu .dropdown').forEach(li => {
+        li.classList.remove('open');
+      });
+    }
+  });
+</script>
 </body>
 </html>

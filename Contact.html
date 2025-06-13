@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | BPS Kabupaten Bekasi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      min-height: 100vh;
+    }
+    #contact {
+      color: #fff;
+      padding: 60px 0 40px 0;
+    }
+    .section-title h2 {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .section-title p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .contact-card {
+      background: #fff;
+      border: none;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      color: #222;
+      min-height: 220px;
+      margin-bottom: 0;
+      padding: 2rem 1.5rem;
+      transition: box-shadow 0.2s, border 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-card:hover {
+      box-shadow: 0 12px 40px rgba(56,189,248,0.15);
+      border: 1.5px solid #38bdf8;
+    }
+    .contact-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px dashed #fd6a36;
+      margin-bottom: 0.5rem;
+    }
+    .contact-icon {
+      font-size: 2rem;
+      color: #fd6a36;
+      margin: 0;
+    }
+    .contact-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
+    }
+    .contact-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #222;
+      margin-top: 0.2rem;
+      word-break: break-all;
+    }
+    .contact-address {
+      color: #222;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-hours li {
+      color: #222;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .contact-hours .fw-bold {
+      color: #222;
+    }
+    @media (max-width: 991px) {
+      .contact-card {
+        min-height: 180px;
+        padding: 1.5rem 1rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .contact-card {
+        min-height: 120px;
+        padding: 1.2rem 0.7rem;
+      }
+      .contact-title {
+        font-size: 1.1rem;
+      }
+      .contact-value, .contact-address, .contact-hours li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="contact" class="contact section">
+    <div class="container section-title text-center mb-5" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p class="text-light">Hubungi kami untuk informasi lebih lanjut atau kunjungi kantor kami di alamat berikut.</p>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 align-items-stretch">
+        <!-- Address & Map -->
+        <div class="col-lg-6">
+          <div class="contact-card mb-4 h-100">
+            <span class="contact-icon-wrap mb-2"><i class="bi bi-geo-alt contact-icon"></i></span>
+            <h3 class="mb-3 contact-title">Address</h3>
+            <p class="text-center mb-3 contact-address">
+              Badan Pusat Statistik Kabupaten Bekasi<br>
+              Komplek Perkantoran Pemda Kabupaten Bekasi<br>
+              Kota Deltamas, Cikarang Pusat<br>
+              Bekasi<br>
+              Jawa Barat - Indonesia
+            </p>
+            <div class="w-100 rounded-3 overflow-hidden" style="min-height:180px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+              <iframe src="https://www.google.com/maps?q=Badan+Pusat+Statistik+Kabupaten+Bekasi&output=embed" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+        <!-- Kontak & Jam Buka -->
+        <div class="col-lg-6 d-flex flex-column h-100">
+          <div class="row g-4 h-100">
+            <div class="col-md-6">
+              <div class="contact-card h-100">
+                <span class="contact-icon-wrap mb-2"><i class="bi bi-telephone contact-icon"></i></span>
+                <h3 class="contact-title">Call Us</h3>
+                <div class="contact-value">+62 21 89970329</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="contact-card h-100">
+                <span class="contact-icon-wrap mb-2"><i class="bi bi-envelope contact-icon"></i></span>
+                <h3 class="contact-title">Email Us</h3>
+                <div class="contact-value">bps3216@bps.go.id</div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="contact-card h-100">
+                <span class="contact-icon-wrap mb-2"><i class="bi bi-clock contact-icon"></i></span>
+                <h3 class="contact-title">Opening Hours</h3>
+                <ul class="list-unstyled text-center mb-0 contact-hours">
+                  <li><span class="fw-bold">Senin – Kamis:</span> 07.30 – 16.00 WIB</li>
+                  <li><span class="fw-bold">Jumat:</span> 08.00 – 16.30 WIB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End row utama -->
+    </div>
+  </section>
+  <!-- Bootstrap JS (optional, for responsive) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
