@@ -10,8 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <link href="assets/img/BPS.png" rel="icon" />
-  <link href="assets/img/BPS.png" rel="apple-touch-icon" />
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/favicon.png" rel="apple-touch-icon" />
   <link href="assets/css/main.css" rel="stylesheet" />
 
   <style>
@@ -40,15 +40,23 @@
       z-index: 10;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       overflow-x: auto;
+      gap: 0;
     }
     .header-left {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-shrink: 0;
-      padding-left: 12px;
+      padding-left: 32px;
+      margin-right: 36px;
+    }
+    #navmenu.navmenu {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      padding-left: 0;
     }
     .header-left img {
       height: 44px;
@@ -145,12 +153,7 @@
       top: 0;
       left: 100%;
     }
-    .mobile-nav-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #333;
-    }
+    
     @media (max-width: 991px) {
       header.header {
         flex-wrap: wrap;
@@ -452,7 +455,7 @@
   <!-- Header dengan logo & navmenu -->
 <header class="header" style="padding-left: 60px;">
   <div class="header-left">
-    <img src="assets/img/BPS.png" alt="Logo BPS" />
+    <img src="assets/img/WadahinLogo.png" alt="Logo BPS" />
     <span>WADAH-IN</span>
   </div>
   <nav id="navmenu" class="navmenu">
