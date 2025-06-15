@@ -1,524 +1,328 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Tentang Kami - BPS Kabupaten Bekasi</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kepegawaian - BPS Kabupaten Bekasi</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="assets/img/BPS.png" rel="icon">
+  <link href="assets/img/BPS.png" rel="apple-touch-icon">
 
-  <link href="assets/img/BPS.png" rel="icon" />
-  <link href="assets/img/BPS.png" rel="apple-touch-icon" />
-  <link href="assets/css/main.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    body {
-      background-image: url("BPSGedung.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      font-family: 'Poppins', Arial, sans-serif;
-      min-height: 100vh;
-    }
-    .overlay-bg {
-      position: fixed;
-      inset: 0;
-      background: rgba(33, 150, 243, 0.08);
-      z-index: 0;
-      pointer-events: none;
-    }
-    header.header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-      padding: 0.7rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      overflow-x: auto;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-      padding-left: 12px;
-    }
-    .header-left img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-      margin-right: 8px;
-    }
-    .header-left span {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #010202;
-      font-family: 'Poppins',sans-serif;
-      letter-spacing: 0.25px;
-    }
-    #navmenu.navmenu {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      padding-left: 12px;
-    }
-    #navmenu.navmenu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      background: none;
-      overflow-x: auto;
-    }
-    #navmenu.navmenu ul li {
-      position: relative;
-      margin-right: 1.5rem;
-      flex-shrink: 0;
-    }
-    #navmenu.navmenu ul li:last-child {
-      margin-right: 0;
-    }
-    #navmenu.navmenu ul li a {
-      text-decoration: none;
-      color: #222;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      align-items: center;
-      padding: 0.5rem 0;
-      white-space: nowrap;
+    /* Custom styles from original kepegawaian.html that might be needed if not in main.css */
+    /* It's better to move these to main.css if they are globally applicable or specific to kepegawaian page sections */
+    .category-title {
+      font-weight: 600;
       text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    #navmenu.navmenu ul li a.active,
-    #navmenu.navmenu ul li a:hover {
+      font-size: 1.08rem;
+      margin-bottom: 18px;
       color: #2196f3;
+      /* Consider using var(--accent-color) or similar if defined in main.css */
+      letter-spacing: 0.5px;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
     }
-    #navmenu.navmenu ul li.dropdown > a {
-      cursor: pointer;
+
+    .card-custom {
+      background-color: #ffffff;
+      border: 1px solid #e3eaf1;
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: box-shadow 0.3s, transform 0.2s;
+      box-shadow: 0 2px 12px rgba(33, 150, 243, 0.06);
+      margin-bottom: 18px;
+      /* Default, can be overridden by mb-3 etc. */
+      color: #222;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
     }
-    #navmenu.navmenu ul li ul {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      min-width: 180px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      display: none;
-      padding: 0.5rem 0;
-      z-index: 999;
-      border-radius: 4px;
+
+    .card-custom:hover {
+      box-shadow: 0 8px 24px rgba(33, 150, 243, 0.13);
+      transform: translateY(-4px) scale(1.03);
     }
-    #navmenu.navmenu ul li:hover > ul {
+
+    .card-custom i {
+      font-size: 2.5rem;
+      margin-bottom: 13px;
+      color: #2196f3;
+      /* Consider using var(--accent-color) */
       display: block;
     }
-    #navmenu.navmenu ul li ul li {
-      margin: 0;
-    }
-    #navmenu.navmenu ul li ul li a {
-      padding: 0.5rem 1rem;
-      color: #222;
-      white-space: nowrap;
-      text-transform: none;
-    }
-    #navmenu.navmenu ul li ul li a:hover {
-      background-color: #e7f1ff;
-      color: #2196f3;
-    }
-    #navmenu.navmenu ul li ul li.dropdown > a::after {
-      content: "\f105";
-      font-family: "Bootstrap Icons";
-      font-weight: bold;
-      margin-left: auto;
-      font-style: normal;
-    }
-    #navmenu.navmenu ul li ul li ul {
-      top: 0;
-      left: 100%;
-    }
-    .mobile-nav-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #333;
-    }
-    @media (max-width: 991px) {
-      header.header {
-        flex-wrap: wrap;
-      }
-      #navmenu.navmenu ul {
-        flex-direction: column;
-        display: none;
-        background: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        left: 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        border-radius: 0 0 12px 12px;
-        z-index: 100;
-        width: 100vw;
-        min-width: 0;
-      }
-      #navmenu.navmenu ul.active {
-        display: flex;
-      }
-      #navmenu.navmenu ul li {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-      }
-      #navmenu.navmenu ul li ul {
-        position: static;
-        box-shadow: none;
-        padding-left: 1rem;
-      }
-      .mobile-nav-toggle {
-        display: block;
-      }
-    }
-    .container {
-      background-color: rgba(255,255,255,0.92);
-      padding: 40px 30px 30px 30px;
-      border-radius: 18px;
-      box-shadow: 0 0 24px rgba(33,150,243,0.10);
-      margin-top: 40px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-    }
-    .section-title {
-      text-align: center;
-      /* margin-bottom: 2.5rem; */
-    }
-    .section-title h2 {
-      font-weight: 700;
-      color: #2196f3;
-      letter-spacing: 1px;
-      /* margin-bottom: 0.5rem; */
-      font-size: 2rem;
-    }
-    .section-title p {
-      color: #444;
-      font-size: 1.1rem;
-      margin-bottom: 0;
-    }
-    .accordion-item {
-      border-radius: 12px !important;
-      margin-bottom: 1.2rem;
-      overflow: hidden;
-      border: none;
-      box-shadow: 0 2px 12px rgba(33,150,243,0.06);
-    }
-    .accordion-button {
-      font-weight: 600;
+
+    .card-custom h6 {
       font-size: 1.08rem;
+      margin-bottom: 6px;
       color: #2196f3;
-      background: #f7fbff;
-      border: none;
-      outline: none;
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-    .accordion-button:not(.collapsed) {
-      color: #fff;
-      background: linear-gradient(90deg, #2196f3 70%, #21cbf3 100%);
-      box-shadow: none;
-    }
-    .accordion-body {
-      background: rgba(255,255,255,0.98);
-      font-size: 1.04rem;
-      color: #333;
-    }
-    .accordion-button::after {
-      color: #2196f3;
-    }
-    .accordion-button:not(.collapsed)::after {
-      color: #fff;
-    }
-    .about-icon {
-      font-size: 2.2rem;
-      color: #2196f3;
-      margin-right: 0.7rem;
-      vertical-align: middle;
-    }
-    @media (max-width: 767px) {
-      .container {
-        padding: 18px 6px 16px 6px;
-      }
-      .section-title h2 {
-        font-size: 1.3rem;
-      }
-      .header-left span {
-        font-size: 1rem;
-      }
-      .header-left img {
-        height: 32px;
-      }
-      header.header {
-        padding: 0.5rem 0.2rem;
-      }
+      /* Consider using var(--accent-color) */
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
+      letter-spacing: 0.2px;
     }
 
-    .section-title {
-    font-weight: 700;
-    text-align: center;
-    /* margin: 48px 0 28px; */
-    font-size: 2.1rem;
-    color: #2196f3;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .category-title {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1.08rem;
-    margin-bottom: 18px;
-    color: #2196f3;
-    letter-spacing: 0.5px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .card-custom {
-    background-color: #ffffff;
-    border: 1px solid #e3eaf1;
-    border-radius: 14px;
-    padding: 22px 18px;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: box-shadow 0.3s, transform 0.2s;
-    box-shadow: 0 2px 12px rgba(33,150,243,0.06);
-    margin-bottom: 18px;
-    color: #222;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .card-custom:hover {
-    box-shadow: 0 8px 24px rgba(33,150,243,0.13);
-    transform: translateY(-4px) scale(1.03);
-  }
-
-  .card-custom i {
-    font-size: 2.5rem;
-    margin-bottom: 13px;
-    color: #2196f3;
-    display: block;
-  }
-
-  .card-custom h6 {
-    font-size: 1.08rem;
-    margin-bottom: 6px;
-    color: #2196f3;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.2px;
-  }
-
-  .card-custom p {
-    font-size: 0.97rem;
-    color: #222;
-    margin-bottom: 0;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.1px;
-  }
-
-  .kompetensi-section {
-    margin-top: 56px;
-  }
-
-  .kompetensi-section h2 {
-    font-size: 1.4rem;
-    color: #2196f3;
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .kompetensi-section p {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 28px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  footer {
-    background: #2196f3;
-    color: #fff;
-    padding: 18px 0 12px 0;
-    font-size: 0.98rem;
-    text-align: center;
-    margin-top: 60px;
-    letter-spacing: 0.2px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  @media (max-width: 991px) {
-    .navbar-nav {
-      gap: 0;
+    .card-custom p {
+      font-size: 0.97rem;
+      color: #222;
+      margin-bottom: 0;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
+      font-weight: 400;
+      letter-spacing: 0.1px;
     }
-    .navbar-nav .nav-link {
-      padding: 0.4rem 0.5rem;
-      margin: 0.2rem 0;
-      border-radius: 4px;
-      text-align: left;
-      font-size: 0.85rem;
-    }
-    .navbar-brand span {
-      font-size: 0.95rem;
-    }
-  }
 
-  @media (max-width: 767px) {
-    .section-title {
-      font-size: 1.1rem;
-      margin: 24px 0 12px;
+    .kompetensi-section {
+      margin-top: 56px;
     }
-    .category-title {
-      font-size: 0.98rem;
-    }
-    .card-custom {
-      padding: 16px 8px;
-    }
+
     .kompetensi-section h2 {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
+      /* Or match section titles from main.css */
+      color: #2196f3;
+      /* Consider using var(--accent-color) */
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
     }
-  }
+
+    .kompetensi-section p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      font-family: 'Poppins', sans-serif;
+      /* Ensure Poppins is loaded or use template fonts */
+    }
   </style>
+
 </head>
-<body>
-  <div class="overlay-bg"></div>
-  <!-- Header dengan logo & navmenu -->
- <header class="header" style="padding-left: 60px;">
-  <div class="header-left">
-    <img src="assets/img/BPS.png" alt="Logo BPS" />
-    <span>WADAH-IN</span>
-  </div>
-  <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a class="nav-link scrollto" href="index.html">Beranda</a></li>
-      <li><a class="nav-link scrollto" href="about.html">Tentang Kami</a></li>
-      <li><a class="nav-link scrollto" href="inovasi.html">Inovasi</a></li>
-      <li><a class="nav-link scrollto active" href="Kepegawaian.html">Kepegawaian</a></li>
-      <li><a class="nav-link scrollto" href="arsip.html">Arsip</a></li>
-      <li class="dropdown">
-        <a href="#"><span>RB dan Kinerja</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+<body class="kepegawaian-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">WADAH-IN</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#">RB 2024</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="about.html">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto" href="inovasi.html">Inovasi</a></li>
+          <li><a class="nav-link scrollto active" href="Kepegawaian.html">Kepegawaian</a></li>
+          <li><a class="nav-link scrollto" href="arsip.html">Arsip</a></li>
           <li class="dropdown">
-            <a href="#"><span>RB 2025</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <a href="#"><span>RB dan Kinerja</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Ini apa gatau</a></li>
-              <li><a href="#">Ini juga gatau</a></li>
+              <li><a href="#">RB 2024</a></li>
+              <li class="dropdown">
+                <a href="#"><span>RB 2025</span> <i class="bi bi-chevron-right toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Laporan Kinerja</a></li>
+                  <li><a href="#">Dokumen RB</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
+          <li><a class="nav-link scrollto" href="index.html#contact">Kontak</a></li>
         </ul>
-      </li>
-      <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-    </ul>
-    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-  </nav>
-</header>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Konten utama -->
-  <div class="container">
-    <!-- Judul Utama -->
-    <h1 class="section-title">Kepegawaian</h1>
-    <!-- Tiga Kategori -->
-    <div class="row text-center">
-      <!-- Cuti Pegawai -->
-      <div class="col-md-4 d-flex flex-column">
-        <div class="category-title">Cuti Pegawai</div>
-        <div class="card-custom mb-3">
-          <i class="bi bi-check2-square"></i>
-          <h6 class="fw-bold text-primary">Persetujuan Cuti</h6>
-          <p>Daftar Persetujuan Cuti</p>
-        </div>
-        <div class="card-custom">
-          <i class="bi bi-person-circle"></i>
-          <h6 class="fw-bold text-primary">SIPECUT–BPS</h6>
-          <p>Sistem Informasi Pengajuan Cuti</p>
-        </div>
+  <main class="main">
+
+    <!-- Page Title Section -->
+    <section class="page-title hero section dark-background" data-aos="fade" style="padding: 50px 0; min-height: 20em;">
+      <img src="assets/img/BPSGedung.png" alt="" data-aos="fade-in">
+      <div class="container" style="min-height: 120px; display: flex; flex-direction: column; justify-content: center;">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="current">Kepegawaian</li>
+          </ol>
+        </nav>
+        <h1>Kepegawaian</h1>
       </div>
-      <!-- Kenaikan Pangkat -->
-      <div class="col-md-4 d-flex flex-column">
-        <div class="category-title">Kenaikan Pangkat</div>
-        <div class="card-custom mb-3">
-          <i class="bi bi-bar-chart-steps"></i>
-          <h6 class="fw-bold text-primary">Kenaikan Pangkat 3275</h6>
-          <p>Drive KP Pegawai BPS Kabupaten Bekasi</p>
-        </div>
-        <div class="card-custom">
-          <i class="bi bi-building"></i>
-          <h6 class="fw-bold text-primary">KP Provinsi</h6>
-          <p>Kenaikan Pangkat Provinsi</p>
-        </div>
-      </div>
-      <!-- Kinerja Pegawai -->
-      <div class="col-md-4 d-flex flex-column">
-        <div class="category-title">Kinerja Pegawai</div>
-        <div class="card-custom mb-3">
-          <i class="bi bi-card-checklist"></i>
-          <h6 class="fw-bold text-primary">SKP–KIPAPP</h6>
-          <p>Surat Kinerja Pegawai</p>
-        </div>
-        <div class="card-custom">
-          <i class="bi bi-patch-check"></i>
-          <h6 class="fw-bold text-primary">PAK Integrasi</h6>
-          <p>Penetapan Angka Kredit Integrasi</p>
-        </div>
-      </div>
-    </div>
-    <!-- Kompetensi Pegawai -->
-    <div class="kompetensi-section">
-      <h2 class="text-center">Kompetensi Pegawai</h2>
-      <p class="text-center mb-4">Buat kamu yang mau usul Uji Kompetensi dan mencari materi pembelajaran.</p>
-      <div class="row justify-content-center g-4">
-        <div class="col-md-3 d-flex flex-column">
-          <div class="card-custom">
-            <i class="bi bi-display"></i>
-            <h6 class="fw-bold text-primary">Uji Kompetensi</h6>
-            <p>Usul Uji Kompetensi</p>
+    </section><!-- /Page Title Section -->
+
+    <!-- Kepegawaian Content Section -->
+    <section id="kepegawaian-content" class="kepegawaian-content section">
+      <div class="container" data-aos="fade-up">
+        <!-- Tiga Kategori -->
+        <div class="row text-center">
+          <!-- Cuti Pegawai -->
+          <div class="col-md-4 d-flex flex-column">
+            <div class="category-title">Cuti Pegawai</div>
+            <div class="card-custom mb-3">
+              <i class="bi bi-check2-square"></i>
+              <h6 class="fw-bold text-primary">Persetujuan Cuti</h6>
+              <p>Daftar Persetujuan Cuti</p>
+            </div>
+            <div class="card-custom">
+              <i class="bi bi-person-circle"></i>
+              <h6 class="fw-bold text-primary">SIPECUT–BPS</h6>
+              <p>Sistem Informasi Pengajuan Cuti</p>
+            </div>
+          </div>
+          <!-- Kenaikan Pangkat -->
+          <div class="col-md-4 d-flex flex-column">
+            <div class="category-title">Kenaikan Pangkat</div>
+            <div class="card-custom mb-3">
+              <i class="bi bi-bar-chart-steps"></i>
+              <h6 class="fw-bold text-primary">Kenaikan Pangkat 3275</h6>
+              <p>Drive KP Pegawai BPS Kabupaten Bekasi</p>
+            </div>
+            <div class="card-custom">
+              <i class="bi bi-building"></i>
+              <h6 class="fw-bold text-primary">KP Provinsi</h6>
+              <p>Kenaikan Pangkat Provinsi</p>
+            </div>
+          </div>
+          <!-- Kinerja Pegawai -->
+          <div class="col-md-4 d-flex flex-column">
+            <div class="category-title">Kinerja Pegawai</div>
+            <div class="card-custom mb-3">
+              <i class="bi bi-card-checklist"></i>
+              <h6 class="fw-bold text-primary">SKP–KIPAPP</h6>
+              <p>Surat Kinerja Pegawai</p>
+            </div>
+            <div class="card-custom">
+              <i class="bi bi-patch-check"></i>
+              <h6 class="fw-bold text-primary">PAK Integrasi</h6>
+              <p>Penetapan Angka Kredit Integrasi</p>
+            </div>
           </div>
         </div>
-        <div class="col-md-3 d-flex flex-column">
-          <div class="card-custom">
-            <i class="bi bi-journal-code"></i>
-            <h6 class="fw-bold text-primary">E–Warkop</h6>
-            <p>E-Learning Warkop (Warung Kompetensi Pegawai) BPS</p>
+        <!-- Kompetensi Pegawai -->
+        <div class="kompetensi-section">
+          <h2 class="text-center">Kompetensi Pegawai</h2>
+          <p class="text-center mb-4">Buat kamu yang mau usul Uji Kompetensi dan mencari materi pembelajaran.</p>
+          <div class="row justify-content-center g-4">
+            <div class="col-md-3 d-flex flex-column">
+              <div class="card-custom">
+                <i class="bi bi-display"></i>
+                <h6 class="fw-bold text-primary">Uji Kompetensi</h6>
+                <p>Usul Uji Kompetensi</p>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex flex-column">
+              <div class="card-custom">
+                <i class="bi bi-journal-code"></i>
+                <h6 class="fw-bold text-primary">E–Warkop</h6>
+                <p>E-Learning Warkop (Warung Kompetensi Pegawai) BPS</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section><!-- /Kepegawaian Content Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">WADAH-IN</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Jl.Raya Industri No.100</p>
+            <p>Cikarang Kota, Bekasi, Jawa Barat 17530</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>(021)89116660</span></p>
+            <p><strong>Email:</strong> <span>bps3216@bps.go.id</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="inovasi.html">Inovasi</a></li>
+            <li><a href="Kepegawaian.html">Kepegawaian</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
     </div>
-  </div>
-  <!-- Footer -->
-  <footer>
-    Hak Cipta © 2024 Badan Pusat Statistik Kabupaten Bekasi
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">WADAH-IN</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
   </footer>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Mobile nav toggle behavior
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    const navMenu = document.getElementById('navmenu').querySelector('ul');
-    mobileNavToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
